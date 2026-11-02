@@ -398,106 +398,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <div class="final" id="us_out" style="display:none"></div>
 <div class="note" id="us_amort"></div>
 </div>
-<!-- ============ 中国 ============ -->
-<div class="mc-grp" id="grp_cn" style="display:none">
-<div class="mc-sec">
-<div class="mc-hd">1 · 基础信息（必填）</div>
-<div class="row2">
-<div><label for="cn_price">房屋总价（元）</label><input id="cn_price" type="number" value="3000000"/></div>
-<div><label for="cn_dpmode">首付填写方式</label><select id="cn_dpmode"><option value="pct">按房价百分比（%）</option><option value="amt">按金额（元）</option></select></div>
-<div><label for="cn_dppct">首付比例（%）</label><input id="cn_dppct" step="1" type="number" value="30"/></div>
-</div>
-<label for="cn_total">贷款总额（元）—— 由总价与首付自动算出，可修改</label>
-<input id="cn_total" type="number" value="2100000"/>
-<div class="row2">
-<div><label for="cn_camt">商业贷款金额（元）</label><input id="cn_camt" type="number" value="1500000"/></div>
-<div><label for="cn_crate">商业贷款年利率（%）</label><input id="cn_crate" step="0.01" type="number" value="4.2"/></div>
-</div>
-<div class="row2">
-<div><label for="cn_disc">利率折扣</label>
-<select id="cn_disc">
-<option value="1">不打折（1.0）</option><option value="0.95">95 折</option>
-<option value="0.9">9 折</option><option selected="" value="0.85">85 折</option><option value="0.8">8 折</option>
-</select></div>
-<div><label for="cn_years">贷款年限（年）</label><input id="cn_years" type="number" value="30"/></div>
-</div>
-<label for="cn_rtype">还款方式</label>
-<select id="cn_rtype"><option value="equal">等额本息（本金+利息）</option><option value="principal">等额本金</option></select>
-</div>
-<div class="mc-sec">
-<div class="mc-hd">2 · 叠加模块（勾选即参与计算）</div>
-<div class="mod" id="cn_m_fund">
-<label class="mod-hd"><input id="cn_k_fund" type="checkbox"/><span>住房公积金贷款（与商贷合并计月供）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="cn_famt">公积金贷款金额（元）</label><input id="cn_famt" type="number" value="600000"/></div>
-<div><label for="cn_frate">公积金年利率（%）</label><input id="cn_frate" step="0.01" type="number" value="3.1"/></div>
-</div>
-<label for="cn_fyears">公积金贷款年限（年）</label><input id="cn_fyears" type="number" value="30"/>
-</div>
-</div>
-<div class="mod" id="cn_m_tax">
-<label class="mod-hd"><input id="cn_k_tax" type="checkbox"/><span>购房税费（计入需准备现金）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="cn_area">建筑面积（平方米）</label><input id="cn_area" step="0.01" type="number" value="89"/></div>
-<div><label for="cn_no">房屋套数</label><select id="cn_no"><option value="1">首套</option><option value="2">二套</option><option value="3">三套及以上</option></select></div>
-</div>
-<div class="row2">
-<div><label for="cn_two">是否满两年</label><select id="cn_two"><option value="1">是</option><option value="0">否</option></select></div>
-<div><label for="cn_five">是否满五唯一</label><select id="cn_five"><option value="1">是</option><option value="0">否</option></select></div>
-<div><label for="cn_iitmode">个税计税方式</label><select id="cn_iitmode"><option value="1">核定征收 1%</option><option value="20">差额 20%</option></select></div>
-</div>
-<div class="row2">
-<div><label for="cn_orig">原值 / 网签价（元）</label><input id="cn_orig" type="number" value="2000000"/></div>
-<div><label for="cn_mf">维修基金（元 / 平方米）</label><input id="cn_mf" type="number" value="100"/></div>
-</div>
-<div class="row2">
-<div><label for="cn_agent">中介费（元）</label><input id="cn_agent" type="number" value="30000"/></div>
-<div><label for="cn_deco">装修预留（元）</label><input id="cn_deco" type="number" value="200000"/></div>
-</div>
-</div>
-</div>
-<div class="mod" id="cn_m_pre">
-<label class="mod-hd"><input id="cn_k_pre" type="checkbox"/><span>提前还款测算（在月供基础上二次计算）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="cn_paid">已还期数（月）</label><input id="cn_paid" type="number" value="36"/></div>
-<div><label for="cn_ppay">提前还款金额（元）</label><input id="cn_ppay" type="number" value="300000"/></div>
-</div>
-<div class="row2">
-<div><label for="cn_pstr">还款策略</label><select id="cn_pstr"><option value="shorten">缩短年限（月供不变）</option><option value="reduce">减少月供（年限不变）</option></select></div>
-<div><label for="cn_pfee">违约金率（%）</label><input id="cn_pfee" step="0.01" type="number" value="0"/></div>
-</div>
-</div>
-</div>
-<div class="mod" id="cn_m_ded">
-<label class="mod-hd"><input id="cn_k_ded" type="checkbox"/><span>房贷利息抵个税（降低实际成本）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="cn_taxr">个人所得税税率档（%）</label><select id="cn_taxr">
-<option value="3">3%</option><option selected="" value="10">10%</option><option value="20">20%</option>
-<option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="45">45%</option></select></div>
-<div><label for="cn_dmode">扣除分摊</label><select id="cn_dmode"><option value="1">全额 1000 元/月归你</option><option value="0.5">夫妻各 500 元/月</option></select></div>
-</div>
-<div class="hint">仅限首套房贷。定额 1000 元/月，最长 240 个月。</div>
-</div>
-</div>
-<div class="mod" id="cn_m_aff">
-<label class="mod-hd"><input id="cn_k_aff" type="checkbox"/><span>负债承受力评估（超线会提示）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="cn_inc">家庭月收入（元）</label><input id="cn_inc" type="number" value="30000"/></div>
-<div><label for="cn_debt">其他固定月支出（元）</label><input id="cn_debt" type="number" value="5000"/></div>
-</div>
-<label for="cn_cap">银行月供收入比上限（%）</label><input id="cn_cap" step="1" type="number" value="50"/>
-</div>
-</div>
-</div>
-<button class="mc-calc" onclick="cnRun()">计算（汇总所有已勾选模块）</button>
-<div class="final" id="cn_out" style="display:none"></div>
-<div class="note" id="cn_amort"></div>
-</div>
+
 </div>
 <!-- ========== 信用卡 ========== -->
 <div class="card" id="credit">
@@ -603,7 +504,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   <dt>PITI</dt><dd>本金、利息、房产税、房屋保险——机构审批时所依据的四项合并口径。</dd>
   <dt>PMI</dt><dd>首付低于 20% 的常规贷款所交的私人房贷保险。LTV 达 78% 时自动终止，80% 时可主动申请取消。</dd>
   <dt>MIP</dt><dd>FHA 贷款的房贷保险费。前期与年度均收取；放款时 LTV 超过 90% 的，收满整个贷款期。</dd>
-  <dt>VA 资金费</dt><dd>VA 贷款以一次性费用替代月度保险。首次使用、首付低于5%时为 2.15%。</dd>
+  <dt>VA 资金费</dt><dd>VA 贷款以一次性费用替代月度保险。首次使用、零首付时通常为 2.3%。</dd>
   <dt>ARM</dt><dd>浮动利率贷款。初始期固定，之后按"指数+加点"重算，受三个上限约束。</dd>
   <dt>DTI</dt><dd>债务收入比。28% 前端与 36% 后端是常规贷款的标准口径。</dd>
   <dt>折扣点数</dt><dd>过户时支付贷款额的 1%，通常换来约 0.25% 的利率下调。</dd>
@@ -694,35 +595,6 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </ul>
 <a class="guide-all" data-i18n="gc_all" href="/zh/guides/">阅读全部指南 →</a>
 </div>
-
-
-<h2>哪种贷款适合你的情况</h2>
-<p>美国四种主要贷款方案解决的是不同问题，而看起来最便宜的选项，往往在你持有贷款的整个周期内并不是最便宜的。</p>
-<ul>
-  <li><b>常规贷款（Conventional）</b>——适合信用良好、首付20%及以上的借款人。PMI 在 LTV 降至78%时自动终止，这是全部条款中最有价值的一条。</li>
-  <li><b>FHA 贷款</b>——接受常规贷款机构不接受的信用分数与首付：最低3.5%首付、分数580多即可。代价是年度 MIP，发放时 LTV 高于90%的要收满全期。</li>
-  <li><b>VA 贷款</b>——符合条件的现役军人、退伍军人可零首付，且无月度抵押贷款保险，以一次性手续费替代月缴保费。</li>
-  <li><b>USDA 贷款</b>——符合条件的郊区与农村借款人可零首付，需付担保费与小额年费。</li>
-  <li><b>ARM</b>——固定初始期内利率更低，之后按「指数＋加点」重新定价。</li>
-</ul>
-<p>上面计算器对每种贷款的定价方式各不相同：选择贷款类型后，保险、税费与各项费用会按其适用规则重新计算。</p>
-
-<h2>报价里漏掉了多少</h2>
-<p>房贷报价通常只报本金与利息。你实际支付的月供还包括房产税、房屋保险，以及在适用情况下的抵押贷款保险——这四部分合称 PITI，是贷款机构审核时所依据的口径。</p>
-<p>以40万美元购房、20%首付、6.5%、30年为例：本金利息为 $2,022.62。若加上按房价1.2%计的房产税与0.35%计的房屋保险，完整月供约为 $2,539——比报价数字每月多出约 $517。</p>
-<p>把你自己的税率与保险费率填入计算器，即可得到完整数字，让预算与实际支出一致。</p>
-
-<h2>签约前值得问清楚的几个问题</h2>
-<ul>
-  <li>是否需要抵押贷款保险？是自动终止还是收满全期？</li>
-  <li>这笔贷款的 PMI 具体在第几个月终止？</li>
-  <li>利率是全期固定，还是会重置？若会，跟踪的是哪个指数？</li>
-  <li>完整的 PITI 月供是多少，而不只是本金利息？</li>
-  <li>过户时总共需要准备多少现金，含成交费用？</li>
-  <li>这笔月供能否通过 28/36 的债务收入比测试？</li>
-</ul>
-<p>上面计算器会按你填入的数字逐项给出答案。</p>
-
 <footer>
 <a data-i18n="footer_guides" href="/zh/guides/">指南文章</a>·
     <a data-i18n="footer_about" href="/zh/about.html">关于我们</a>·
@@ -1036,7 +908,7 @@ const i18n = {
     gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
     gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
     gc_g14_t: 'US Closing Costs: What You Actually Pay at Settlement',
-    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 1% to 3% (2026 national average: about 1.04%) of the loan',
+    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan',
     gc_g15_t: 'Debt-to-Income Ratio: How Much House You Can Actually Afford',
     gc_g15_d: 'The 28/36 rule, front-end versus back-end, and how to work out your real budget',
     gc_g16_t: '15-Year vs 30-Year Mortgage: The Real Trade-Off',

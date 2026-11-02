@@ -466,111 +466,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         <div class="note" id="us_amort"></div>
       </div>
 
-      <!-- ============ CN ============ -->
-      <div id="grp_cn" class="mc-grp" style="display:none">
-        <div class="mc-sec">
-          <div class="mc-hd">1 · Basics (required)</div>
-          <div class="row2">
-            <div><label for="cn_price">Property Price (¥)</label><input id="cn_price" type="number" value="3000000"></div>
-            <div><label for="cn_dppct">Down Payment (%)</label><input id="cn_dppct" type="number" step="1" value="30"></div>
-          </div>
-          <label for="cn_total">Total Loan (¥) — auto-filled from price and down payment, editable</label>
-          <input id="cn_total" type="number" value="2100000">
-          <div class="row2">
-            <div><label for="cn_camt">Commercial Loan (¥)</label><input id="cn_camt" type="number" value="1500000"></div>
-            <div><label for="cn_crate">Commercial Rate (%)</label><input id="cn_crate" type="number" step="0.01" value="4.2"></div>
-          </div>
-          <div class="row2">
-            <div><label for="cn_disc">Rate Discount</label>
-              <select id="cn_disc">
-                <option value="1">None (1.0)</option><option value="0.95">95%</option>
-                <option value="0.9">90%</option><option value="0.85" selected>85%</option><option value="0.8">80%</option>
-              </select></div>
-            <div><label for="cn_years">Term (Years)</label><input id="cn_years" type="number" value="30"></div>
-          </div>
-          <label for="cn_rtype">Repayment Method</label>
-          <select id="cn_rtype"><option value="equal">Equal instalment (principal + interest)</option><option value="principal">Equal principal</option></select>
-        </div>
-
-        <div class="mc-sec">
-          <div class="mc-hd">2 · Add-on Modules (tick to include)</div>
-
-          <div class="mod" id="cn_m_fund">
-            <label class="mod-hd"><input type="checkbox" id="cn_k_fund"><span>Housing Provident Fund Loan (combined with the commercial loan)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="cn_famt">Fund Loan Amount (¥)</label><input id="cn_famt" type="number" value="600000"></div>
-                <div><label for="cn_frate">Fund Rate (%)</label><input id="cn_frate" type="number" step="0.01" value="3.1"></div>
-              </div>
-              <label for="cn_fyears">Fund Term (Years)</label><input id="cn_fyears" type="number" value="30">
-            </div>
-          </div>
-
-          <div class="mod" id="cn_m_tax">
-            <label class="mod-hd"><input type="checkbox" id="cn_k_tax"><span>Purchase Taxes &amp; Fees (counted into total cash needed)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="cn_area">Floor Area (m²)</label><input id="cn_area" type="number" step="0.01" value="89"></div>
-                <div><label for="cn_no">Property Number</label><select id="cn_no"><option value="1">First home</option><option value="2">Second home</option><option value="3">Third or more</option></select></div>
-              </div>
-              <div class="row2">
-                <div><label for="cn_two">Held 2+ years by seller</label><select id="cn_two"><option value="1">Yes</option><option value="0">No</option></select></div>
-                <div><label for="cn_five">Only home &amp; held 5+ years</label><select id="cn_five"><option value="1">Yes</option><option value="0">No</option></select></div>
-              </div>
-              <div class="row2">
-                <div><label for="cn_orig">Original / Registered Price (¥)</label><input id="cn_orig" type="number" value="2000000"></div><div><label for="cn_iitm">Personal income tax basis</label><select id="cn_iitm"><option value="1">Assessed 1%</option><option value="2">Difference 20%</option></select></div>
-                <div><label for="cn_mf">Maintenance Fund (¥ / m²)</label><input id="cn_mf" type="number" value="100"></div>
-              </div>
-              <div class="row2">
-                <div><label for="cn_agent">Agency Fee (¥)</label><input id="cn_agent" type="number" value="30000"></div>
-                <div><label for="cn_deco">Renovation Budget (¥)</label><input id="cn_deco" type="number" value="200000"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mod" id="cn_m_pre">
-            <label class="mod-hd"><input type="checkbox" id="cn_k_pre"><span>Early Repayment (second pass on top of the monthly payment)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="cn_paid">Months Already Paid</label><input id="cn_paid" type="number" value="36"></div>
-                <div><label for="cn_ppay">Lump Sum Repayment (¥)</label><input id="cn_ppay" type="number" value="300000"></div>
-              </div>
-              <div class="row2">
-                <div><label for="cn_pstr">Strategy</label><select id="cn_pstr"><option value="shorten">Shorten the term (payment unchanged)</option><option value="reduce">Reduce the payment (term unchanged)</option></select></div>
-                <div><label for="cn_pfee">Penalty Rate (%)</label><input id="cn_pfee" type="number" step="0.01" value="0"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mod" id="cn_m_ded">
-            <label class="mod-hd"><input type="checkbox" id="cn_k_ded"><span>Mortgage Interest Tax Deduction (reduces your cost)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="cn_taxr">Income Tax Bracket (%)</label><select id="cn_taxr">
-                  <option value="3">3%</option><option value="10" selected>10%</option><option value="20">20%</option>
-                  <option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="45">45%</option></select></div>
-                <div><label for="cn_dmode">Deduction Split</label><select id="cn_dmode"><option value="1">Full 1,000 ¥/month to you</option><option value="0.5">500 ¥/month each for a couple</option></select></div>
-              </div>
-              <div class="hint">First-home loans only. Flat 1,000 ¥/month, up to 240 months.</div>
-            </div>
-          </div>
-
-          <div class="mod" id="cn_m_aff">
-            <label class="mod-hd"><input type="checkbox" id="cn_k_aff"><span>Affordability Check (flags an over-limit payment)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="cn_inc">Household Monthly Income (¥)</label><input id="cn_inc" type="number" value="30000"></div>
-                <div><label for="cn_debt">Other Fixed Monthly Expenses (¥)</label><input id="cn_debt" type="number" value="5000"></div>
-              </div>
-              <label for="cn_cap">Lender Payment-to-Income Limit (%)</label><input id="cn_cap" type="number" step="1" value="50">
-            </div>
-          </div>
-        </div>
-
-        <button class="mc-calc" onclick="cnRun()">Calculate (rolls up every ticked module)</button>
-        <div class="final" id="cn_out" style="display:none"></div>
-        <div class="note" id="cn_amort"></div>
-      </div>
+      
 
       </div>
 
@@ -661,7 +557,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
   <dt>PITI</dt><dd>Principal, interest, property tax and home insurance — the four-part bundle lenders underwrite against.</dd>
   <dt>PMI</dt><dd>Private mortgage insurance on conventional loans below 20% down. It ends automatically at 78% LTV and can be requested at 80%.</dd>
   <dt>MIP</dt><dd>Mortgage insurance premium on FHA loans. Charged upfront and annually; above 90% LTV at origination it runs for the life of the loan.</dd>
-  <dt>VA funding fee</dt><dd>A one-off charge on VA loans in place of monthly insurance. Commonly 2.15% on first use with a down payment below 5%.</dd>
+  <dt>VA funding fee</dt><dd>A one-off charge on VA loans in place of monthly insurance. Commonly 2.3% on first use with no down payment.</dd>
   <dt>ARM</dt><dd>Adjustable-rate mortgage. Fixed for an introductory period, then rebuilt as index plus margin, subject to three caps.</dd>
   <dt>DTI</dt><dd>Debt-to-income ratio. The 28% front-end and 36% back-end guideline is the standard conventional test.</dd>
   <dt>Discount point</dt><dd>1% of the loan paid at closing, typically buying about a 0.25% rate reduction.</dd>
@@ -709,7 +605,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         <span class="gd" data-i18n="gc_g11_d">One formula, a full worked example, and the cases where you should not</span></a></li>
 <li data-topic="mortgage" data-country="us"><a href="/guides/us-closing-costs.html">
 <span class="gt" data-i18n="gc_g14_t">US Closing Costs: What You Actually Pay at Settlement</span>
-<span class="gd" data-i18n="gc_g14_d">Lender fees, third-party charges and prepaid escrow — typically 1% to 3% (2026 national average: about 1.04%) of the loan</span></a></li>
+<span class="gd" data-i18n="gc_g14_d">Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan</span></a></li>
 <li data-topic="mortgage" data-country="us"><a href="/guides/us-dti-affordability.html">
 <span class="gt" data-i18n="gc_g15_t">Debt-to-Income Ratio: How Much House You Can Actually Afford</span>
 <span class="gd" data-i18n="gc_g15_d">The 28/36 rule, front-end versus back-end, and how to work out your real budget</span></a></li>
@@ -753,35 +649,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <a class="guide-all" href="/guides/" data-i18n="gc_all">Read all guides →</a>
   </div>
 
-  
-<h2>Which loan type fits your situation</h2>
-<p>The four main US loan programmes solve different problems, and the cheapest-looking option is often not the cheapest over the period you keep the loan.</p>
-<ul>
-  <li><b>Conventional</b> — best for borrowers with a strong credit file and 20% or more down. PMI ends automatically at 78% LTV, which is the single most valuable feature in the list.</li>
-  <li><b>FHA</b> — accepts credit scores and down payments conventional lenders will not: 3.5% down with a score in the 580s. The cost is annual MIP, which above 90% LTV runs for the life of the loan.</li>
-  <li><b>VA</b> — no down payment and no monthly mortgage insurance for eligible service members and veterans. A one-off funding fee replaces the monthly premium.</li>
-  <li><b>USDA</b> — no down payment for eligible rural and suburban borrowers, with a guarantee fee and a small annual fee.</li>
-  <li><b>ARM</b> — a lower rate for a fixed introductory period, then a rate rebuilt from an index plus a margin.</li>
-</ul>
-<p>Each is priced differently in the calculator above: select the loan type and the insurance, tax and fee lines rebuild from the rules that apply to it.</p>
-
-<h2>How much the quoted payment leaves out</h2>
-<p>A mortgage quote usually states principal and interest. The payment you actually make also carries property tax, home insurance, and mortgage insurance where it applies — the four-part bundle lenders underwrite against, usually called PITI.</p>
-<p>On a $400,000 purchase with 20% down at 6.5% over 30 years, principal and interest is $2,022.62. Adding property tax at 1.2% of value and home insurance at 0.35% brings the full payment to about $2,539 — roughly $517 a month that the headline figure does not mention.</p>
-<p>Enter your own tax and insurance rates in the calculator and the full figure appears, so that what you budget matches what you pay.</p>
-
-<h2>Questions worth asking before you commit</h2>
-<ul>
-  <li>Is mortgage insurance required, and does it end automatically or run for the term?</li>
-  <li>At what month does PMI fall away on this exact loan?</li>
-  <li>Is the rate fixed for the whole term, or does it reset — and against which index?</li>
-  <li>What is the full PITI payment, not just principal and interest?</li>
-  <li>How much cash is needed at settlement, including closing costs?</li>
-  <li>Does the payment pass the 28/36 debt-to-income test?</li>
-</ul>
-<p>The calculator answers each of these for the figures you enter.</p>
-
-<footer>
+  <footer>
     <a href="/guides/" data-i18n="footer_guides">Guides</a>·
     <a href="/about.html" data-i18n="footer_about">About</a>·
     <a href="/contact.html" data-i18n="footer_contact">Contact</a>

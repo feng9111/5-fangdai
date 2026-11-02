@@ -279,125 +279,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </select>
 <div class="hint">不同国家的房贷规则与字段完全不同，切换后会整体替换下方表单。</div>
 </div>
-<!-- ============ 美国 ============ -->
-<div class="mc-grp" id="grp_us" style="display:none">
-<div class="mc-sec">
-<div class="mc-hd">1 · 基础贷款信息（必填）</div>
-<div class="row2">
-<div><label for="us_price">房屋总价（美元）</label><input id="us_price" type="number" value="600000"/></div>
-<div><label for="us_dpmode">首付填写方式</label>
-<select id="us_dpmode"><option value="pct">按房价百分比（%）</option><option value="amt">按金额（美元）</option></select></div>
-</div>
-<div class="row2">
-<div><label for="us_dp">首付比例（%）</label><input id="us_dp" step="0.1" type="number" value="20"/></div>
-<div><label for="us_ltype">贷款类型</label>
-<select id="us_ltype">
-<option value="conv">常规贷款（Conventional）</option>
-<option value="fha">联邦住房管理局贷款（FHA）</option>
-<option value="va">退伍军人事务部贷款（VA）</option>
-<option value="usda">农业部农村住房贷款（USDA）</option>
-<option value="jumbo">大额贷款（Jumbo）</option>
-</select></div>
-</div>
-<div class="row2">
-<div><label for="us_struct">还款结构</label>
-<select id="us_struct">
-<option value="fixed">固定利率</option>
-<option value="arm">浮动利率（ARM）</option>
-<option value="io">只付利息（Interest-Only）</option>
-<option value="balloon">气球贷（Balloon）</option>
-</select></div>
-<div><label for="us_years">贷款年限（年）</label><input id="us_years" type="number" value="30"/></div>
-</div>
-<label for="us_rate">年利率（%）</label>
-<input id="us_rate" step="0.01" type="number" value="6.5"/>
-<div id="us_armbox" style="display:none">
-<div class="row2">
-<div><label for="us_fixy">固定期（年）</label><input id="us_fixy" type="number" value="5"/></div>
-<div><label for="us_rate2">重设后年利率（%）</label><input id="us_rate2" step="0.01" type="number" value="7.5"/></div>
-</div>
-<div class="hint">浮动利率常见上限：首次调整 ±2%，之后每年 ±2%，终身 ±5%。</div>
-</div>
-</div>
-<div class="mc-sec">
-<div class="mc-hd">2 · 叠加模块（勾选即计入月供）</div>
-<div class="mod" id="us_m_tax">
-<label class="mod-hd"><input checked="" id="us_k_tax" type="checkbox"/><span>房产税</span></label>
-<div class="mod-bd">
-<label for="us_taxr">房产税率（占房价百分比 / 年）</label>
-<input id="us_taxr" step="0.01" type="number" value="1.2"/>
-<div class="hint">由州、郡、市分别征收，各地差异极大，请填写你所在地区的实际税率。</div>
-</div>
-</div>
-<div class="mod" id="us_m_ins">
-<label class="mod-hd"><input checked="" id="us_k_ins" type="checkbox"/><span>房屋保险</span></label>
-<div class="mod-bd">
-<label for="us_ins">年保费（美元 / 年）</label><input id="us_ins" type="number" value="1800"/>
-</div>
-</div>
-<div class="mod" id="us_m_hoa">
-<label class="mod-hd"><input id="us_k_hoa" type="checkbox"/><span>物业费（HOA）</span></label>
-<div class="mod-bd">
-<label for="us_hoa">每月费用（美元 / 月）</label><input id="us_hoa" type="number" value="0"/>
-</div>
-</div>
-<div class="mod" id="us_m_pmi">
-<label class="mod-hd"><input checked="" id="us_k_pmi" type="checkbox"/><span>房贷保险（PMI / MIP）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="us_pmir">年保险费率（占贷款额百分比 / 年）</label><input id="us_pmir" step="0.01" type="number" value="0.5"/></div>
-<div><label for="us_upfront">一次性预付费用（占贷款额百分比）</label><input id="us_upfront" step="0.01" type="number" value="0"/></div>
-</div>
-<label class="sub-chk"><input id="us_upfin" type="checkbox"/><span>把预付费用计入贷款本金</span></label>
-<div id="us_va_box" style="display:none">
-<label for="us_va_use">退伍军人事务部贷款额度使用情况</label>
-<select id="us_va_use"><option value="first">首次使用</option><option value="sub">再次使用</option></select>
-</div>
-<div class="hint">选择贷款类型时会自动填入该类贷款的典型费率，可按你的贷款机构实际数值修改。常规贷款（Conventional）的 PMI 在贷款价值比降至 78% 时终止。联邦住房管理局贷款（FHA）的 MIP：首付不低于 10% 时收取 11 年，否则收取至贷款结束。农业部农村住房贷款（USDA）按年收取至贷款结束。退伍军人事务部贷款（VA）不收年费，只收一次性资金费。</div>
-<div class="pmi-state" id="us_pmi_state" style="display:none"></div>
-</div>
-</div>
-<div class="mod" id="us_m_close">
-<label class="mod-hd"><input checked="" id="us_k_close" type="checkbox"/><span>过户费与买点</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="us_close">过户费（美元）</label><input id="us_close" type="number" value="12000"/></div>
-<div><label for="us_pts">买点数（1 个点 = 贷款额 1%）</label><input id="us_pts" step="0.25" type="number" value="0"/></div>
-</div>
-<div class="hint">每买 1 个点，通常可降低约 0.25% 的利率。</div>
-</div>
-</div>
-<div class="mod" id="us_m_extra">
-<label class="mod-hd"><input id="us_k_extra" type="checkbox"/><span>额外还款</span></label>
-<div class="mod-bd">
-<label for="us_extra">每月多还（美元 / 月）</label><input id="us_extra" type="number" value="300"/>
-</div>
-</div>
-<div class="mod" id="us_m_refi">
-<label class="mod-hd"><input id="us_k_refi" type="checkbox"/><span>再融资分析</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="us_orate">原年利率（%）</label><input id="us_orate" step="0.01" type="number" value="7.5"/></div>
-<div><label for="us_nrate">新年利率（%）</label><input id="us_nrate" step="0.01" type="number" value="6.0"/></div>
-</div>
-<div class="hint">对比新旧月供差额与回本月数。</div>
-</div>
-</div>
-<div class="mod" id="us_m_dti">
-<label class="mod-hd"><input checked="" id="us_k_dti" type="checkbox"/><span>负债承受力评估（28/36 规则）</span></label>
-<div class="mod-bd">
-<div class="row2">
-<div><label for="us_inc">税前年收入（美元 / 年）</label><input id="us_inc" type="number" value="120000"/></div>
-<div><label for="us_debt">其他每月负债（美元 / 月）</label><input id="us_debt" type="number" value="800"/></div>
-</div>
-<div class="hint">美国银行采用 28/36 规则：住房支出不超过月收入 28%，总负债不超过 36%。</div>
-</div>
-</div>
-</div>
-<button class="mc-calc" onclick="usRun()">计算（汇总所有已勾选模块）</button>
-<div class="final" id="us_out" style="display:none"></div>
-<div class="note" id="us_amort"></div>
-</div>
+
 <!-- ============ 中国 ============ -->
 <div class="mc-grp" id="grp_cn">
 <div class="mc-sec">
@@ -694,38 +576,6 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </ul>
 <a class="guide-all" data-i18n="gc_all" href="/zh/guides/">阅读全部指南 →</a>
 </div>
-
-<h2>商业贷款、公积金贷款与组合贷怎么选</h2>
-<p>三种方式的差异不在月供数字本身，而在利率、额度与适用条件。</p>
-<ul>
-  <li><b>商业贷款</b>：以5年期以上LPR为定价基准，2026年10月20日为3.5%。额度受收入与房价限制较少，审批快，但利率高于公积金。</li>
-  <li><b>公积金贷款</b>：利率显著更低，5年以上首套为2.6%（自2026年1月1日起执行）。但额度受缴存年限、账户余额与当地上限约束，往往不足以覆盖全部房款。</li>
-  <li><b>组合贷</b>：公积金部分用足额度，缺口由商业贷款补足，两部分分别计息。这是利率与额度的折中，也是大多数购房者的实际选择。</li>
-</ul>
-<p>以100万元贷款、30年、等额本息为例：纯商贷按3.5%计，月供约4,490元；若70万商贷＋30万公积金（2.6%），月供约4,344元，30年可省利息约5.3万元。</p>
-<p>在上面的计算器中选择「组合贷」，两部分贷款会分别计算后合并列示。</p>
-
-<h2>买房要准备的一次性支出</h2>
-<p>首付之外还有几笔容易被忽略的支出，做预算时需要单独列出：</p>
-<ul>
-  <li><b>契税</b>：现行标准以140平方米为界，家庭唯一住房≤140㎡按1%征收，&gt;140㎡按1.5%；第二套&gt;140㎡按2%。</li>
-  <li><b>增值税</b>（二手房）：卖方购买不足2年的按3%征收率全额缴纳；满2年免征（含北上广深）。</li>
-  <li><b>个人所得税</b>：满五唯一通常免征，否则按差额20%或全额1%核定。</li>
-  <li><b>维修基金、中介费、权证登记费</b>：按当地标准与房屋情况确定。</li>
-</ul>
-<p>以300万元、95平方米、家庭唯一住房为例，仅契税一项即为30,000元。把这些与首付合并计算，才是真正的「现金总需求」。</p>
-
-<h2>签约前值得确认的几个问题</h2>
-<ul>
-  <li>执行利率是多少？是在5年期以上LPR基础上加多少点？</li>
-  <li>重定价日选1月1日还是发放日对应日？</li>
-  <li>提前还款是缩短年限还是减少月供？两者节息差别很大。</li>
-  <li>组合贷中公积金部分的额度是否已用足？</li>
-  <li>等额本息与等额本金，按你的持有年限哪个更省？</li>
-  <li>税费是否已按现行标准（契税140㎡、增值税3%）计入？</li>
-</ul>
-<p>把你的数字填入上面的计算器，这几项都会直接给出结果。</p>
-
 <footer>
 <a data-i18n="footer_guides" href="/zh/guides/">指南文章</a>·
     <a data-i18n="footer_about" href="/zh/about.html">关于我们</a>·
@@ -1039,7 +889,7 @@ const i18n = {
     gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
     gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
     gc_g14_t: 'US Closing Costs: What You Actually Pay at Settlement',
-    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 1% to 3% (2026 national average: about 1.04%) of the loan',
+    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan',
     gc_g15_t: 'Debt-to-Income Ratio: How Much House You Can Actually Afford',
     gc_g15_d: 'The 28/36 rule, front-end versus back-end, and how to work out your real budget',
     gc_g16_t: '15-Year vs 30-Year Mortgage: The Real Trade-Off',
@@ -2911,7 +2761,7 @@ function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Ma
     else { l.textContent='首付金额（元）'; i.value=Math.round(pr*0.3); i.step='10000'; }
     i.dispatchEvent(new Event('input')); i.dispatchEvent(new Event('change'));
   });
-  function pmi(){
+  function pmi(){ if(!document.getElementById('us_price')||!document.getElementById('us_dpmode')) return;
     var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
     var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
     var loan=Math.max(0, price-dp);

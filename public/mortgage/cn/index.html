@@ -336,135 +336,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         <div class="hint">Calculators for different countries use different rules and fields. Switching replaces the whole form below.</div>
       </div>
 
-      <!-- ============ US ============ -->
-      <div id="grp_us" class="mc-grp" style="display:none">
-        <div class="mc-sec">
-          <div class="mc-hd">1 · Loan Basics (required)</div>
-          <div class="row2">
-            <div><label for="us_price">Home Price ($)</label><input id="us_price" type="number" value="600000"></div>
-            <div><label for="us_dpmode">Down payment entered as</label>
-              <select id="us_dpmode"><option value="pct">Percent of price (%)</option><option value="amt">Dollar amount ($)</option></select></div>
-          </div>
-          <div class="row2">
-            <div><label for="us_dp">Down Payment (%)</label><input id="us_dp" type="number" step="0.1" value="20"></div>
-            <div><label for="us_ltype">Loan Type</label>
-              <select id="us_ltype">
-                <option value="conv">Conventional</option>
-                <option value="fha">FHA</option>
-                <option value="va">VA</option>
-                <option value="usda">USDA</option>
-                <option value="jumbo">Jumbo</option>
-              </select></div>
-          </div>
-          <div class="row2">
-            <div><label for="us_struct">Loan Structure</label>
-              <select id="us_struct">
-                <option value="fixed">Fixed Rate</option>
-                <option value="arm">Adjustable (ARM)</option>
-                <option value="io">Interest-Only</option>
-                <option value="balloon">Balloon</option>
-              </select></div>
-            <div><label for="us_years">Loan Term (Years)</label><input id="us_years" type="number" value="30"></div>
-          </div>
-          <label for="us_rate">Interest Rate (% APR)</label>
-          <input id="us_rate" type="number" step="0.01" value="6.5">
-          <div id="us_armbox" style="display:none">
-            <div class="row2">
-              <div><label for="us_fixy">Fixed Period (Years)</label><input id="us_fixy" type="number" value="5"></div>
-              <div><label for="us_rate2">Rate After Reset (% APR)</label><input id="us_rate2" type="number" step="0.01" value="7.5"></div>
-            </div>
-            <div class="hint">Typical ARM caps: first adjustment +/-2%, then +/-2% per year, lifetime +/-5%.</div>
-          </div>
-        </div>
-
-        <div class="mc-sec">
-          <div class="mc-hd">2 · Add-on Modules (tick to include in the payment)</div>
-
-          <div class="mod" id="us_m_tax">
-            <label class="mod-hd"><input type="checkbox" id="us_k_tax" checked><span>Property Tax</span></label>
-            <div class="mod-bd">
-              <label for="us_taxr">Property Tax Rate (% of home price / year)</label>
-              <input id="us_taxr" type="number" step="0.01" value="1.2">
-              <div class="hint">Levied separately by state, county and city — rates vary widely, so enter your own actual rate.</div>
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_ins">
-            <label class="mod-hd"><input type="checkbox" id="us_k_ins" checked><span>Homeowners Insurance</span></label>
-            <div class="mod-bd">
-              <label for="us_ins">Annual Premium ($ / year)</label><input id="us_ins" type="number" value="1800">
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_hoa">
-            <label class="mod-hd"><input type="checkbox" id="us_k_hoa"><span>HOA / Condo Fee</span></label>
-            <div class="mod-bd">
-              <label for="us_hoa">Monthly Fee ($ / month)</label><input id="us_hoa" type="number" value="0">
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_pmi">
-            <label class="mod-hd"><input type="checkbox" id="us_k_pmi" checked><span>Mortgage Insurance (PMI / MIP)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="us_pmir">Annual Rate (% of loan / year)</label><input id="us_pmir" type="number" step="0.01" value="0.5"></div>
-                <div><label for="us_upfront">Upfront Fee (% of loan, one-time)</label><input id="us_upfront" type="number" step="0.01" value="0"></div>
-              </div>
-              <label class="sub-chk"><input type="checkbox" id="us_upfin"><span>Finance the upfront fee into the loan amount</span></label>
-              <div id="us_va_box" style="display:none">
-                <label for="us_va_use">VA entitlement usage</label>
-                <select id="us_va_use"><option value="first">First use</option><option value="sub">Subsequent use</option></select>
-              </div>
-              <div class="hint">Typical rates are auto-filled when you choose a loan type — edit them to match your lender. Conventional PMI ends at 78% LTV. FHA MIP runs 11 years when the down payment is 10% or more, otherwise for the life of the loan. USDA charges annually for the life of the loan. VA charges no annual fee, only a one-time funding fee.</div>
-              <div id="us_pmi_state" class="pmi-state" style="display:none"></div>
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_close">
-            <label class="mod-hd"><input type="checkbox" id="us_k_close" checked><span>Closing Costs</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="us_close">Closing Costs ($)</label><input id="us_close" type="number" value="12000"></div>
-                <div><label for="us_pts">Points (1 point = 1% of loan)</label><input id="us_pts" type="number" step="0.25" value="0"></div>
-              </div>
-              <div class="hint">Each point typically buys about 0.25% off the rate.</div>
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_extra">
-            <label class="mod-hd"><input type="checkbox" id="us_k_extra"><span>Extra Payment</span></label>
-            <div class="mod-bd">
-              <label for="us_extra">Extra Monthly Payment ($ / month)</label><input id="us_extra" type="number" value="300">
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_refi">
-            <label class="mod-hd"><input type="checkbox" id="us_k_refi"><span>Refinance</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="us_orate">Current Rate (% APR)</label><input id="us_orate" type="number" step="0.01" value="7.5"></div>
-                <div><label for="us_nrate">New Rate (% APR)</label><input id="us_nrate" type="number" step="0.01" value="6.0"></div>
-              </div>
-              <div class="hint">Compares old vs new payment and the break-even period.</div>
-            </div>
-          </div>
-
-          <div class="mod" id="us_m_dti">
-            <label class="mod-hd"><input type="checkbox" id="us_k_dti" checked><span>Affordability (DTI 28/36 Rule)</span></label>
-            <div class="mod-bd">
-              <div class="row2">
-                <div><label for="us_inc">Gross Annual Income ($ / year)</label><input id="us_inc" type="number" value="120000"></div>
-                <div><label for="us_debt">Other Monthly Debt ($ / month)</label><input id="us_debt" type="number" value="800"></div>
-              </div>
-              <div class="hint">US lenders use the 28/36 rule: housing under 28% of income, total debt under 36%.</div>
-            </div>
-          </div>
-        </div>
-
-        <button class="mc-calc" onclick="usRun()">Calculate (rolls up every ticked module)</button>
-        <div class="final" id="us_out" style="display:none"></div>
-        <div class="note" id="us_amort"></div>
-      </div>
+      
 
       <!-- ============ CN ============ -->
       <div id="grp_cn" class="mc-grp">
@@ -709,7 +581,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
         <span class="gd" data-i18n="gc_g11_d">One formula, a full worked example, and the cases where you should not</span></a></li>
 <li data-topic="mortgage" data-country="us"><a href="/guides/us-closing-costs.html">
 <span class="gt" data-i18n="gc_g14_t">US Closing Costs: What You Actually Pay at Settlement</span>
-<span class="gd" data-i18n="gc_g14_d">Lender fees, third-party charges and prepaid escrow — typically 1% to 3% (2026 national average: about 1.04%) of the loan</span></a></li>
+<span class="gd" data-i18n="gc_g14_d">Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan</span></a></li>
 <li data-topic="mortgage" data-country="us"><a href="/guides/us-dti-affordability.html">
 <span class="gt" data-i18n="gc_g15_t">Debt-to-Income Ratio: How Much House You Can Actually Afford</span>
 <span class="gd" data-i18n="gc_g15_d">The 28/36 rule, front-end versus back-end, and how to work out your real budget</span></a></li>
@@ -753,40 +625,7 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <a class="guide-all" href="/guides/" data-i18n="gc_all">Read all guides →</a>
   </div>
 
-  
-
-<h2>Commercial, HPF and combination loans compared</h2>
-<p>The three structures differ less in the monthly figure than in rate, ceiling and eligibility.</p>
-<ul>
-  <li><b>Commercial loan</b> — priced off the 5-year-plus LPR, which stood at 3.5% as of 20 October 2026. Limits are driven mainly by income and property value, approval is fast, but the rate is higher than the housing provident fund.</li>
-  <li><b>Housing provident fund (HPF) loan</b> — materially cheaper: 2.6% for a first home over five years, effective 1 January 2026. But the amount is capped by contribution history, account balance and local limits, and often will not cover the full purchase price.</li>
-  <li><b>Combination loan</b> — the HPF portion is taken to its ceiling and the shortfall is filled with a commercial loan, with the two priced separately. This is the trade-off most buyers actually end up with.</li>
-</ul>
-<p>On a loan of 1,000,000 over 30 years with equal monthly payments: at 3.5% commercial the payment is about 4,490. With 700,000 commercial plus 300,000 HPF at 2.6%, the payment is about 4,344 — about 146 a month less, and roughly 53,000 less interest over 30 years.</p>
-<p>Select "combination loan" in the calculator above and the two portions are computed separately, then combined.</p>
-
-<h2>The one-off costs nobody budgets for</h2>
-<p>Beyond the down payment, several charges are routinely missed and should be listed separately:</p>
-<ul>
-  <li><b>Deed tax</b> — the current threshold is 140 square metres: 1% for a sole family home at or below 140㎡, 1.5% above it; 2% for a second home above 140㎡.</li>
-  <li><b>VAT</b> (second-hand) — 3% of the full price where the seller has held under two years; exempt at two years or more, including Beijing, Shanghai, Guangzhou and Shenzhen.</li>
-  <li><b>Personal income tax</b> — usually exempt where the home is the sole property and held five years; otherwise 20% of the gain or 1% of the price.</li>
-  <li><b>Maintenance fund, agency fee, registration</b> — set locally and by the transaction.</li>
-</ul>
-<p>On a property of 3,000,000 at 95 square metres as a sole family home, deed tax alone is 30,000. Adding these to the down payment is what gives the true cash requirement.</p>
-
-<h2>Questions worth settling before you sign</h2>
-<ul>
-  <li>What is the execution rate, and how many basis points over the 5-year-plus LPR?</li>
-  <li>Is the repricing date 1 January or the loan's anniversary?</li>
-  <li>For prepayment, do you shorten the term or reduce the payment? The interest saved differs sharply.</li>
-  <li>In a combination loan, is the HPF portion taken to its full ceiling?</li>
-  <li>Equal instalment or equal principal — which is cheaper over your holding period?</li>
-  <li>Have taxes been entered on current rules (deed tax at 140㎡, VAT at 3%)?</li>
-</ul>
-<p>Enter your own figures in the calculator above and every one of these is answered directly.</p>
-
-<footer>
+  <footer>
     <a href="/guides/" data-i18n="footer_guides">Guides</a>·
     <a href="/about.html" data-i18n="footer_about">About</a>·
     <a href="/contact.html" data-i18n="footer_contact">Contact</a>
@@ -2993,7 +2832,7 @@ function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Ma
   var MI_PRESET={conv:[0.5,0],fha:[0.55,1.75],va:[0,2.15],usda:[0.35,1.0],jumbo:[0.5,0]};
   var lastLt=null;
   function vaFee(dpPct,use){ return use==='sub' ? (dpPct<5?3.3:1.5) : (dpPct<5?2.15:1.25); }
-  function pmi(){
+  function pmi(){ if(!document.getElementById('us_price')||!document.getElementById('us_dpmode')) return;
     var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
     var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
     var loan=Math.max(0, price-dp);
