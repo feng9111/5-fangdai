@@ -207,28 +207,3 @@ https://home.saoo.me/sitemap.xml → 200，13 条 URL 全为 home.saoo.me
 因为自定义域走企业版证书服务，遇 PSL 后缀会报"通配符证书不覆盖"。
 ★ 子域 home.saoo.me 不需单独加 DNS 记录，routes 模式下 CF 自动处理。
 ```
-
-## ⚠️ 本包是「测试域名版」
-
-| 项目 | 值 |
-|---|---|
-| 域名 | `ook.5678.us.ci` |
-| Worker 名 | `5-fangdai` |
-| account_id | **未写死**，deploy 时用当前登录账号 |
-
-**测试环境保护（已内置）**：`src/index.js` 判断 `PROD_HOST`，
-非 `home.saoo.me` 的域名一律：
-- 所有响应加 `x-robots-tag: noindex`
-- `/robots.txt` 返回 `Disallow: /`
-- sitemap 返回空
-
-**测试站不会被 Google 收录**，可放心反复部署，也不会与生产站形成重复内容。
-
-### 要部署到生产时
-
-改 `wrangler.toml` 两处即可：
-```toml
-name = "fangdai-xinyong-ka"
-routes = [{ pattern = "home.saoo.me/*", zone_name = "saoo.me" }]
-```
-（生产包另有单独一份，无需手改。）

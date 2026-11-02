@@ -1,8 +1,8 @@
 {
-  "name": "5-fangdai",
+  "name": "fangdai-xinyong-ka",
   "version": "1.0.0",
   "private": true,
-  "description": "LendMath 房贷站（测试部署 ook.5678.us.ci）on Cloudflare Workers + Assets",
+  "description": "LendMath 房贷站（home.saoo.me）on Cloudflare Workers + Assets",
   "main": "src/index.js",
   "scripts": {
     "dev": "wrangler dev",
