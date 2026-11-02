@@ -501,6 +501,18 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     </div>
 
     
+    <!-- ===== AD SLOT 2 =====
+     AdSense approved: remove the comment markers and replace data-ad-slot with your real ad unit ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 2 ===== -->
     <div class="note" data-i18n="credit_note">Banks' "nominal APR" = monthly fee × 12. Real APR uses IRR and is typically nearly double. Read terms carefully.</div>
   </div>
 
@@ -516,6 +528,18 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
     <button class="calc" onclick="calcFx()" data-i18n="btn_fx">Convert</button>
     <div class="result" id="fx_result" data-i18n="fx_waiting">Select currencies and click convert</div>
     
+    <!-- ===== AD SLOT 3 =====
+     AdSense approved: remove the comment markers and replace data-ad-slot with your real ad unit ID
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8915931557404979"
+       data-ad-slot="0000000000"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+===== /AD SLOT 3 ===== -->
     <div class="note" data-i18n="fx_note">Shows <b>daily mid-market rate</b>, not real-time bank rates. Actual exchange uses bank sell rate, typically 0.3%-1% higher than mid-rate.</div>
   </div>
 
@@ -2899,6 +2923,7 @@ function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Ma
 })();
 
 function usRun(){
+  if(!document.getElementById('us_price')) return;
   var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
   var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
   if(dp>=price){ alert('Down payment must be less than the home price.'); return; }
@@ -3211,6 +3236,7 @@ function usRun(){
 })();
 
 function cnRun(){
+  if(!document.getElementById('cn_price')) return;
   var price=mcV('cn_price'), dppct=mcV('cn_dppct');
   var down=price*dppct/100;
   var camt=mcV('cn_camt'), crate=mcV('cn_crate')*parseFloat(document.getElementById('cn_disc').value||1);

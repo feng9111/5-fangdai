@@ -2804,6 +2804,7 @@ function mcPmt(P,r,n){ if(n<=0) return 0; if(r===0) return P/n; return P*r/(1-Ma
 })();
 
 function usRun(){
+  if(!document.getElementById('us_price')) return;
   var price=mcV('us_price'), mode=document.getElementById('us_dpmode').value;
   var dp = mode==='pct' ? price*mcV('us_dp')/100 : mcV('us_dp');
   if(dp>=price){ alert('首付金额必须小于房屋总价。'); return; }
@@ -3064,6 +3065,7 @@ function usRun(){
 })();
 
 function cnRun(){
+  if(!document.getElementById('cn_price')) return;
   var price=mcV('cn_price');
   var cndm=document.getElementById('cn_dpmode');
   var cnMode=cndm?cndm.value:'pct';
