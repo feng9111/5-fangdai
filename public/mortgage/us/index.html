@@ -260,8 +260,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <style>
 /* 国家专页：只隐藏"另一国的专属房贷文章"；
    通用文章（信用卡/汇率，data-country="all"）每个页面都保留 */
-.country-cn .guide-list li[data-country="us"] { display:none !important; }
-.country-us .guide-list li[data-country="cn"] { display:none !important; }
+/* 国家专页：只显示该国文章（通用文章 data-country="all" 只在首页出现） */
+.country-us .guide-list li:not([data-country="us"]) { display:none !important; }
+.country-cn .guide-list li:not([data-country="cn"]) { display:none !important; }
 </style>
 </head>
 <body class="mortgage-only country-us">
@@ -633,6 +634,12 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       <li data-topic="mortgage" data-country="cn"><a href="/guides/mortgage-prepayment.html">
         <span class="gt" data-i18n="gc_g2_t">Early Repayment: Shorten the Term or Cut the Payment?</span>
         <span class="gd" data-i18n="gc_g2_d">A worked example, the formula behind it, and five checks before you prepay</span></a></li>
+      <li data-topic="mortgage" data-country="cn"><a href="guides/cn-combo-loan.html">
+        <span class="gt" data-i18n="gc_g12_t">China Combo Mortgage: How Provident Fund and Commercial Loans Combine</span>
+        <span class="gd" data-i18n="gc_g12_d">Two loans, two rates — what a 70/30 split actually saves</span></a></li>
+      <li data-topic="mortgage" data-country="cn"><a href="guides/cn-property-taxes.html">
+        <span class="gt" data-i18n="gc_g13_t">China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget</span>
+        <span class="gd" data-i18n="gc_g13_d">The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes</span></a></li>
       <li data-topic="credit" data-country="all"><a href="/guides/credit-card-installment-traps.html">
         <span class="gt" data-i18n="gc_g3_t">Why a 0.6% Monthly Fee Is Really About 13% a Year</span>
         <span class="gd" data-i18n="gc_g3_d">How instalment pricing hides the true cost, and how to compute it</span></a></li>
@@ -3253,8 +3260,9 @@ function cnRun(){
     var two=document.getElementById('cn_two').value==='1';
     var five=document.getElementById('cn_five').value==='1';
     var orig=mcV('cn_orig'), deed;
-    if(no==='1') deed = area<=90?price*0.01:price*0.015;
-    else if(no==='2') deed = area<=90?price*0.01:price*0.02;
+/* 契税面积阈值 140㎡：依据 财政部/税务总局/住建部公告2024年第16号（2024-12-01 起施行，财税〔2016〕23号同时废止）：唯一/第二套 ≤140㎡ 减按 1%；唯一 >140㎡ 1.5%；第二套 >140㎡ 2%。⚠️ 90㎡ 是 2016 年旧标准，已废止，请勿改回 */
+    if(no==='1') deed = area<=140?price*0.01:price*0.015;
+    else if(no==='2') deed = area<=140?price*0.01:price*0.02;
     else deed = price*0.03;
     var vat = two?0:(price/1.05*0.05);
     var iitm=document.getElementById('cn_iitm'); var iitmv=iitm?iitm.value:'1';

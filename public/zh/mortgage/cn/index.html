@@ -206,8 +206,9 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <style>
 /* 国家专页：只隐藏"另一国的专属房贷文章"；
    通用文章（信用卡/汇率，data-country="all"）每个页面都保留 */
-.country-cn .guide-list li[data-country="us"] { display:none !important; }
-.country-us .guide-list li[data-country="cn"] { display:none !important; }
+/* 国家专页：只显示该国文章（通用文章 data-country="all" 只在首页出现） */
+.country-us .guide-list li:not([data-country="us"]) { display:none !important; }
+.country-cn .guide-list li:not([data-country="cn"]) { display:none !important; }
 </style>
 </head>
 <body class="mortgage-only country-cn">
@@ -575,6 +576,12 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <li data-topic="mortgage" data-country="cn"><a href="/zh/guides/mortgage-prepayment.html">
 <span class="gt" data-i18n="gc_g2_t">提前还款：缩短期限还是减少月供？</span>
 <span class="gd" data-i18n="gc_g2_d">实例演算、背后的公式，以及还款前必须确认的五件事</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-combo-loan.html">
+<span class="gt" data-i18n="gc_g12_t">公积金组合贷怎么算：商贷与公积金的真实月供</span>
+<span class="gd" data-i18n="gc_g12_d">两笔贷款两个利率——七三开到底省多少</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-property-taxes.html">
+<span class="gt" data-i18n="gc_g13_t">中国买房税费全解：契税、增值税与那些被忽略的支出</span>
+<span class="gd" data-i18n="gc_g13_d">140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出</span></a></li>
 <li data-topic="credit" data-country="all"><a href="/zh/guides/credit-card-installment-traps.html">
 <span class="gt" data-i18n="gc_g3_t">为什么月费率 0.6% 实际年化接近 13%</span>
 <span class="gd" data-i18n="gc_g3_d">分期定价如何隐藏真实成本，以及怎么自己算出来</span></a></li>
@@ -726,6 +733,10 @@ const i18n = {
     gc_g6_d: '一行公式算出实际成本，以及费用常藏的四个地方',
     gc_all: '阅读全部指南 →',
     gc_g11_d: '一个公式、完整实例，以及不该重贷的几种情形',
+    gc_g12_t: '公积金组合贷怎么算：商贷与公积金的真实月供',
+    gc_g12_d: '两笔贷款两个利率——七三开到底省多少',
+    gc_g13_t: '中国买房税费全解：契税、增值税与那些被忽略的支出',
+    gc_g13_d: '140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出',
     gc_g11_t: '什么时候该重贷：回本周期这一关',
     gc_g10_d: '指数加利差、三重利率上限，以及 5/1 ARM 实测',
     gc_g10_t: '浮动利率 ARM 与固定利率：利率如何重置',
@@ -882,6 +893,10 @@ const i18n = {
     gc_g6_d: 'The one-line effective cost formula and the four places fees hide',
     gc_all: 'Read all guides →',
     gc_g11_d: 'One formula, a full worked example, and the cases where you should not',
+    gc_g12_t: 'China Combo Mortgage: How Provident Fund and Commercial Loans Combine',
+    gc_g12_d: 'Two loans, two rates — what a 70/30 split actually saves',
+    gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
+    gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
     gc_g11_t: 'When Refinancing Makes Sense: The Break-Even Test',
     gc_g10_d: 'Index plus margin, the three rate caps, and a 5/1 ARM worked example',
     gc_g10_t: 'ARM vs Fixed Rate: How Adjustable Loans Reset',
@@ -3121,8 +3136,8 @@ function cnRun(){
     var twoZ=document.getElementById('cn_two').value==='1';
     var fiveZ=document.getElementById('cn_five').value==='1';
     var origZ=mcV('cn_orig');
-    if(noZ==='1') tDeed = aZ<=90?price*0.01:price*0.015;
-    else if(noZ==='2') tDeed = aZ<=90?price*0.01:price*0.02;
+    if(noZ==='1') tDeed = aZ<=140?price*0.01:price*0.015;
+    else if(noZ==='2') tDeed = aZ<=140?price*0.01:price*0.02;
     else tDeed = price*0.03;
     tVat = twoZ?0:(price/1.05*0.05);
     var iitZ=document.getElementById('cn_iitmode').value;
@@ -3206,8 +3221,9 @@ function cnRun(){
     var five=document.getElementById('cn_five').value==='1';
     var orig=mcV('cn_orig'), deed;
     /* 契税：2024-12-01 起，唯一/二套 面积标准由 90㎡ 提高到 140㎡ */
-    if(no==='1') deed = area<=90?price*0.01:price*0.015;
-    else if(no==='2') deed = area<=90?price*0.01:price*0.02;
+/* 契税面积阈值 140㎡：依据 财政部/税务总局/住建部公告2024年第16号（2024-12-01 起施行，财税〔2016〕23号同时废止）：唯一/第二套 ≤140㎡ 减按 1%；唯一 >140㎡ 1.5%；第二套 >140㎡ 2%。⚠️ 90㎡ 是 2016 年旧标准，已废止，请勿改回 */
+    if(no==='1') deed = area<=140?price*0.01:price*0.015;
+    else if(no==='2') deed = area<=140?price*0.01:price*0.02;
     else deed = price*0.03;
     /* 增值税：2026-01-01 起，不满 2 年按 3% 征收率全额缴纳；满 2 年免征 */
     var vat = two?0:(price/1.05*0.05);
@@ -3219,7 +3235,7 @@ function cnRun(){
     var taxSum=deed+vat+iit+mfv;
     var cash=down+taxSum+mcV('cn_agent')+mcV('cn_deco');
     h+='<div class="mc-sec2"><div class="t">购房税费</div><div class="tw"><table class="mc-tbl">';
-    h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=90?'≤90㎡ 1%':(no==='1'?'>90㎡ 1.5%':'>90㎡ 2%'))+'）</td></tr>';
+    h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=90?'≤140㎡ 1%':(no==='1'?'>140㎡ 1.5%':'>140㎡ 2%'))+'）</td></tr>';
     h+='<tr><td>增值税</td><td>'+mcCNY(vat)+(two?'（满两年，免征）':'（不满两年，按全额 5% 征收）')+'</td></tr>';
     h+='<tr><td>个人所得税</td><td>'+mcCNY(iit)+(five?'（满五唯一，免征）':(iitm==='20'?'（差额 20%）':'（核定 1%）'))+'</td></tr>';
     h+='<tr><td>印花税</td><td>免征（个人买卖住房暂免征收）</td></tr>';
