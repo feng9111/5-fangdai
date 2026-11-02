@@ -215,6 +215,23 @@ async function route(request, env, url) {
       }
     }
 
+    /* ★ /mortgage/ 与 /zh/mortgage/ 目录索引兜底
+     * sitemap 与 canonical 写的是 /mortgage/us/（目录形式），
+     * 但 Workers Assets 不保证对目录路径自动补 index.html，
+     * 一旦返回 404，这两个新增国家页就等于白做。
+     * 这里显式探测 xxx/index.html，与 /zh/ 的处理保持一致。 */
+    if (isNav && pathname.includes('/mortgage')) {
+      const clean = pathname.replace(/\/+$/, '');   // /mortgage/us/ → /mortgage/us
+      const probe = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '/index.html', request.clone())
+      );
+      if (probe.status === 200) return probe;
+      const probe2 = await env.ASSETS.fetch(
+        new Request(url.origin + clean + '.html', request.clone())
+      );
+      if (probe2.status === 200) return probe2;
+    }
+
     const res = await env.ASSETS.fetch(request);
 
     // 404 兜底
