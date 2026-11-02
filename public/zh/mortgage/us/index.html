@@ -570,6 +570,15 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
       <li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-refinance-guide.html">
         <span class="gt" data-i18n="gc_g11_t">什么时候该重贷：回本周期这一关</span>
         <span class="gd" data-i18n="gc_g11_d">一个公式、完整实例，以及不该重贷的几种情形</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-closing-costs.html">
+<span class="gt" data-i18n="gc_g14_t">美国过户费用详解：交割当天到底要付多少</span>
+<span class="gd" data-i18n="gc_g14_d">机构费用、第三方费用与预缴托管——通常是贷款额的 2%~5%</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-dti-affordability.html">
+<span class="gt" data-i18n="gc_g15_t">债务收入比 DTI：你到底买得起多少钱的房子</span>
+<span class="gd" data-i18n="gc_g15_d">28/36 规则、前端与后端比率，以及如何倒推真实预算</span></a></li>
+<li data-topic="mortgage" data-country="us"><a href="/zh/guides/us-15-vs-30-year.html">
+<span class="gt" data-i18n="gc_g16_t">15 年期与 30 年期房贷：真实的取舍</span>
+<span class="gd" data-i18n="gc_g16_d">每月多 956 美元，换少付约 28.3 万美元利息</span></a></li>
 <li data-topic="mortgage" data-country="cn"><a href="/zh/guides/mortgage-basics.html">
 <span class="gt" data-i18n="gc_g1_t">房贷到底怎么算：本金、利息与摊销</span>
 <span class="gd" data-i18n="gc_g1_d">摊销机制、等额本息对比等额本金、固定与浮动利率</span></a></li>
@@ -582,6 +591,15 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-property-taxes.html">
 <span class="gt" data-i18n="gc_g13_t">中国买房税费全解：契税、增值税与那些被忽略的支出</span>
 <span class="gd" data-i18n="gc_g13_d">140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-amortization-compare.html">
+<span class="gt" data-i18n="gc_g17_t">等额本息与等额本金怎么选：中国房贷还款方式对比</span>
+<span class="gd" data-i18n="gc_g17_d">利率相同总额不同——总利息相差约 9 万元</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-lpr-repricing.html">
+<span class="gt" data-i18n="gc_g18_t">LPR 与房贷重定价日：为什么月供总是晚于降息</span>
+<span class="gd" data-i18n="gc_g18_d">基准加固定加点，以及两种重定价日约定</span></a></li>
+<li data-topic="mortgage" data-country="cn"><a href="/zh/guides/cn-affordability-budget.html">
+<span class="gt" data-i18n="gc_g19_t">买房预算怎么算：从月供倒推到房价</span>
+<span class="gd" data-i18n="gc_g19_d">可承受月供、对应可贷额度、扣除税费后的可用首付</span></a></li>
 <li data-topic="credit" data-country="all"><a href="/zh/guides/credit-card-installment-traps.html">
 <span class="gt" data-i18n="gc_g3_t">为什么月费率 0.6% 实际年化接近 13%</span>
 <span class="gd" data-i18n="gc_g3_d">分期定价如何隐藏真实成本，以及怎么自己算出来</span></a></li>
@@ -737,6 +755,18 @@ const i18n = {
     gc_g12_d: '两笔贷款两个利率——七三开到底省多少',
     gc_g13_t: '中国买房税费全解：契税、增值税与那些被忽略的支出',
     gc_g13_d: '140㎡ 契税阈值、满二免征的增值税，以及没人报价的支出',
+    gc_g14_t: '美国过户费用详解：交割当天到底要付多少',
+    gc_g14_d: '机构费用、第三方费用与预缴托管——通常是贷款额的 2%~5%',
+    gc_g15_t: '债务收入比 DTI：你到底买得起多少钱的房子',
+    gc_g15_d: '28/36 规则、前端与后端比率，以及如何倒推真实预算',
+    gc_g16_t: '15 年期与 30 年期房贷：真实的取舍',
+    gc_g16_d: '每月多 956 美元，换少付约 28.3 万美元利息',
+    gc_g17_t: '等额本息与等额本金怎么选：中国房贷还款方式对比',
+    gc_g17_d: '利率相同总额不同——总利息相差约 9 万元',
+    gc_g18_t: 'LPR 与房贷重定价日：为什么月供总是晚于降息',
+    gc_g18_d: '基准加固定加点，以及两种重定价日约定',
+    gc_g19_t: '买房预算怎么算：从月供倒推到房价',
+    gc_g19_d: '可承受月供、对应可贷额度、扣除税费后的可用首付',
     gc_g11_t: '什么时候该重贷：回本周期这一关',
     gc_g10_d: '指数加利差、三重利率上限，以及 5/1 ARM 实测',
     gc_g10_t: '浮动利率 ARM 与固定利率：利率如何重置',
@@ -897,6 +927,18 @@ const i18n = {
     gc_g12_d: 'Two loans, two rates — what a 70/30 split actually saves',
     gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
     gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
+    gc_g14_t: 'US Closing Costs: What You Actually Pay at Settlement',
+    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan',
+    gc_g15_t: 'Debt-to-Income Ratio: How Much House You Can Actually Afford',
+    gc_g15_d: 'The 28/36 rule, front-end versus back-end, and how to work out your real budget',
+    gc_g16_t: '15-Year vs 30-Year Mortgage: The Real Trade-Off',
+    gc_g16_d: '$956 more per month against about $283,000 less interest',
+    gc_g17_t: 'Equal Instalment vs Equal Principal: How China Mortgages Repay',
+    gc_g17_d: 'Same rate, different totals — about ¥90,000 of interest apart',
+    gc_g18_t: 'China Mortgage LPR and Repricing: Why Your Payment Changes Late',
+    gc_g18_d: 'The reference plus fixed spread, and the two repricing date conventions',
+    gc_g19_t: 'China Home Budget: From Monthly Payment to Purchase Price',
+    gc_g19_d: 'Sustainable payment, supported loan, usable down payment after taxes',
     gc_g11_t: 'When Refinancing Makes Sense: The Break-Even Test',
     gc_g10_d: 'Index plus margin, the three rate caps, and a 5/1 ARM worked example',
     gc_g10_t: 'ARM vs Fixed Rate: How Adjustable Loans Reset',
@@ -3139,7 +3181,7 @@ function cnRun(){
     if(noZ==='1') tDeed = aZ<=140?price*0.01:price*0.015;
     else if(noZ==='2') tDeed = aZ<=140?price*0.01:price*0.02;
     else tDeed = price*0.03;
-    tVat = twoZ?0:(price/1.05*0.05);
+    tVat = twoZ?0:(price/1.03*0.03);
     var iitZ=document.getElementById('cn_iitmode').value;
     tIit = fiveZ?0:Math.max(0,(iitZ==='20')?(price-origZ)*0.20:(price-origZ)*0.01);
     tMf = aZ*mcV('cn_mf');
@@ -3226,7 +3268,7 @@ function cnRun(){
     else if(no==='2') deed = area<=140?price*0.01:price*0.02;
     else deed = price*0.03;
     /* 增值税：2026-01-01 起，不满 2 年按 3% 征收率全额缴纳；满 2 年免征 */
-    var vat = two?0:(price/1.05*0.05);
+    var vat = two?0:(price/1.03*0.03);
     /* 个税：满五唯一免征；否则核定 1% 或差额 20%（可选） */
     var iitm=document.getElementById('cn_iitmode').value;
     var iit = five?0:Math.max(0,(iitm==='20')?(price-orig)*0.20:(price-orig)*0.01);
@@ -3236,7 +3278,7 @@ function cnRun(){
     var cash=down+taxSum+mcV('cn_agent')+mcV('cn_deco');
     h+='<div class="mc-sec2"><div class="t">购房税费</div><div class="tw"><table class="mc-tbl">';
     h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=90?'≤140㎡ 1%':(no==='1'?'>140㎡ 1.5%':'>140㎡ 2%'))+'）</td></tr>';
-    h+='<tr><td>增值税</td><td>'+mcCNY(vat)+(two?'（满两年，免征）':'（不满两年，按全额 5% 征收）')+'</td></tr>';
+    h+='<tr><td>增值税</td><td>'+mcCNY(vat)+(two?'（满两年，免征）':'（不满两年，按全额 3% 征收）')+'</td></tr>';
     h+='<tr><td>个人所得税</td><td>'+mcCNY(iit)+(five?'（满五唯一，免征）':(iitm==='20'?'（差额 20%）':'（核定 1%）'))+'</td></tr>';
     h+='<tr><td>印花税</td><td>免征（个人买卖住房暂免征收）</td></tr>';
     h+='<tr><td>维修基金</td><td>'+mcCNY(mfv)+'</td></tr>';
