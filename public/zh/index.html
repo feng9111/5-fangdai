@@ -913,7 +913,7 @@ const i18n = {
     gc_g13_t: 'China Property Purchase Taxes: Deed Tax, VAT and What Buyers Forget',
     gc_g13_d: 'The 140㎡ deed tax threshold, the two-year VAT rule and the costs nobody quotes',
     gc_g14_t: 'US Closing Costs: What You Actually Pay at Settlement',
-    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 2% to 5% of the loan',
+    gc_g14_d: 'Lender fees, third-party charges and prepaid escrow — typically 1% to 3% (2026 national average: about 1.04%) of the loan',
     gc_g15_t: 'Debt-to-Income Ratio: How Much House You Can Actually Afford',
     gc_g15_d: 'The 28/36 rule, front-end versus back-end, and how to work out your real budget',
     gc_g16_t: '15-Year vs 30-Year Mortgage: The Real Trade-Off',
@@ -3262,7 +3262,7 @@ function cnRun(){
     var taxSum=deed+vat+iit+mfv;
     var cash=down+taxSum+mcV('cn_agent')+mcV('cn_deco');
     h+='<div class="mc-sec2"><div class="t">购房税费</div><div class="tw"><table class="mc-tbl">';
-    h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=90?'≤140㎡ 1%':(no==='1'?'>140㎡ 1.5%':'>140㎡ 2%'))+'）</td></tr>';
+    h+='<tr><td>契税</td><td>'+mcCNY(deed)+'（'+(no==='1'?'唯一住房':(no==='2'?'第二套':'三套及以上'))+'，'+(area<=140?'≤140㎡ 1%':(no==='1'?'>140㎡ 1.5%':'>140㎡ 2%'))+'）</td></tr>';
     h+='<tr><td>增值税</td><td>'+mcCNY(vat)+(two?'（满两年，免征）':'（不满两年，按全额 3% 征收）')+'</td></tr>';
     h+='<tr><td>个人所得税</td><td>'+mcCNY(iit)+(five?'（满五唯一，免征）':(iitm==='20'?'（差额 20%）':'（核定 1%）'))+'</td></tr>';
     h+='<tr><td>印花税</td><td>免征（个人买卖住房暂免征收）</td></tr>';

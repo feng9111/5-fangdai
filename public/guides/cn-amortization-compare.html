@@ -163,13 +163,13 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </ul>
 <h2>2. Same rate, different totals</h2>
 <p>¥1,000,000 at 3.5% over 30 years:</p>
-<table>
+<div class="tw"><table>
 <tr><th></th><th>Equal instalment</th><th>Equal principal</th></tr>
 <tr><td>First month</td><td>¥4,490.45</td><td>¥5,694.44</td></tr>
 <tr><td>Last month</td><td>¥4,490.45</td><td>¥2,785.88</td></tr>
 <tr><td>Total interest</td><td>¥616,561</td><td>¥526,458</td></tr>
 <tr><td>Total repaid</td><td>¥1,616,561</td><td>¥1,526,458</td></tr>
-</table>
+</table></div>
 <div class="box"><b>Equal principal saves about ¥90,103 in interest</b> &mdash; but it demands roughly ¥1,204 more in the first month, and that gap only closes slowly.</div>
 <h2>3. Why equal principal costs less</h2>
 <p>Interest is charged on the outstanding balance. Equal principal retires balance faster in the early years, so less interest accrues. Equal instalment keeps the payment flat, which means it retires balance more slowly at the start &mdash; and that slower start is what you pay for.</p>
@@ -177,14 +177,14 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 <p>The two structures do not diverge forever. On this example, the equal-principal payment falls below the equal-instalment payment partway through the term &mdash; by month 181 it is roughly ¥4,236, already below the flat ¥4,490. From that point the equal-principal borrower enjoys both a lower payment and a lower balance.</p>
 <div class="warnbox"><b>The crossover is the whole trade-off.</b> You pay more for the first portion of the term and less for the remainder. Whether that suits you depends on whether your income is higher now or later.</div>
 <h2>5. Who each structure suits</h2>
-<table>
+<div class="tw"><table>
 <tr><th>Situation</th><th>Better fit</th><th>Why</th></tr>
 <tr><td>Income expected to fall (near retirement)</td><td>Equal principal</td><td>Front-loads cost while income is high</td></tr>
 <tr><td>Income expected to rise (early career)</td><td>Equal instalment</td><td>Keeps early payments low</td></tr>
 <tr><td>Tight cash flow now</td><td>Equal instalment</td><td>Lower first payment</td></tr>
 <tr><td>Planning to prepay early</td><td>Either</td><td>Prepayment dominates the difference</td></tr>
 <tr><td>Planning to sell within a few years</td><td>Equal instalment</td><td>The interest gap barely materialises</td></tr>
-</table>
+</table></div>
 <h2>6. The common misconception</h2>
 <p>Equal principal is often described as "always cheaper". It is cheaper in total interest only if you hold the loan to term. Sell or prepay in year three and the totals are close, because the interest saving is back-loaded &mdash; you already paid the higher payments without collecting the later benefit.</p>
 <h2>7. Interaction with prepayment</h2>
@@ -196,6 +196,57 @@ html:not([lang="en"]) .ad-disclosure .en-t{display:none}
 </ul>
 <h2>8. How to compare for your own loan</h2>
 <p>Run both structures at your actual rate and term, then look at three things: the first-month payment, whether you can comfortably afford it today, and the total interest difference at your expected holding period, not at the full term. A calculator that only shows the full-term saving will overstate the benefit for anyone who does not keep the loan for thirty years.</p>
+<h2>9. What the first payment actually contains</h2>
+<p>Equal principal is front-loaded, so it is worth looking at month one on a ¥1,000,000 loan at 3.5% over 30 years:</p>
+<div class="tw"><table>
+<tr><th></th><th>Equal instalment</th><th>Equal principal</th></tr>
+<tr><td>First payment</td><td>¥4,490.45</td><td>¥5,694.45</td></tr>
+<tr><td>Of which interest</td><td>¥2,916.67</td><td>¥2,916.67</td></tr>
+<tr><td>Of which principal</td><td>¥1,573.78</td><td>¥2,777.78</td></tr>
+</table></div>
+<p>The interest in month one is identical — both are charged on the full ¥1,000,000. The entire difference is principal: equal principal retires ¥1,204 more of the balance in the very first month, and that head start is what compounds into the total saving.</p>
+
+<h2>10. Where the ¥90,000 of interest comes from</h2>
+<ul>
+  <li>Equal instalment: ¥4,490.45 × 360 = ¥1,616,562 repaid, so <b>¥616,562</b> of interest.</li>
+  <li>Equal principal: principal ¥1,000,000 plus interest of P × monthly rate × (n+1) ÷ 2 = <b>¥526,458</b>.</li>
+  <li>Difference: <b>about ¥90,104</b>.</li>
+</ul>
+<p>For the equal-principal structure the total interest has a closed form, because the principal repaid each month is constant: total interest = P × (monthly rate) × (n + 1) ÷ 2. That single line is why the comparison is easy to verify without a schedule.</p>
+
+<h2>11. Finding your own crossover month</h2>
+<p>The equal-principal payment starts higher and falls every month; the equal-instalment payment never moves. They must cross. On this example the crossing happens around <b>month 181</b>, just past the halfway point, where the equal-principal payment is about ¥4,236 against the flat ¥4,490.</p>
+<p>To find it on your own loan:</p>
+<ul>
+  <li>Compute the equal-instalment payment once.</li>
+  <li>Compute the equal-principal payment as (P ÷ n) + (remaining balance × monthly rate).</li>
+  <li>Walk forward month by month until the second falls below the first.</li>
+</ul>
+<p>The crossover month is the practical answer to "when does this start paying me back". If you expect to sell before it, the total-interest advantage is largely theoretical.</p>
+
+<h2>12. Which structure works better with prepayment</h2>
+<p>Prepayment dominates the choice of structure. Once you retire a large slice of principal early, the remaining schedules converge, because both are then charging interest on a much smaller balance.</p>
+<ul>
+  <li><b>Prepaying early?</b> The structure matters less than the timing and the amount.</li>
+  <li><b>Prepaying late?</b> Equal instalment has already paid a larger share of interest, so there is less left to save.</li>
+  <li><b>Ask whether the lender shortens the term or cuts the payment.</b> Shortening the term is where the saving comes from; cutting the payment largely preserves the schedule.</li>
+</ul>
+
+<h2>13. Matching the structure to your situation</h2>
+<div class="tw"><table>
+<tr><th>Situation</th><th>Better fit</th><th>Why</th></tr>
+<tr><td>Income expected to fall</td><td>Equal principal</td><td>Pays more while income is high</td></tr>
+<tr><td>Income expected to rise</td><td>Equal instalment</td><td>Keeps early payments low</td></tr>
+<tr><td>Tight cash flow now</td><td>Equal instalment</td><td>First payment is ¥1,204 lower</td></tr>
+<tr><td>Planning to prepay within a few years</td><td>Either</td><td>Prepayment dominates the difference</td></tr>
+<tr><td>Planning to sell within five years</td><td>Equal instalment</td><td>The interest gap barely accumulates</td></tr>
+<tr><td>Holding to full term</td><td>Equal principal</td><td>Captures the full ¥90,000 difference</td></tr>
+</table></div>
+
+<h2>14. The mistake to avoid</h2>
+<p>"Equal principal is always cheaper" is true only in total interest over the full term, and only if you hold the loan that long. The saving is back-loaded: you pay more for years before the balance advantage shows up. Sell or prepay in year three and the two structures come out close, because you paid the higher payments without collecting the later benefit.</p>
+<p>Judge it on your own holding period, not on the headline total.</p>
+
 <div class="tipbox"><b>Run your own numbers:</b> <a href="/mortgage/cn/">China mortgage calculator</a> — combo loans, prepayment and purchase taxes, priced with your own figures.</div><footer>
 
   <a href="/">Home</a>·<a href="/guides/">Guides</a>·<a href="/about.html">About</a>·<a href="/contact.html">Contact</a><br>
